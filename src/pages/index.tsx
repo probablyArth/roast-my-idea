@@ -1,4 +1,4 @@
-import { Title, Stack, Center, Text, Button } from "@mantine/core";
+import { Title, Stack, Center, Text, Button, Loader } from "@mantine/core";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useSession, signIn, signOut } from "next-auth/react";
@@ -9,7 +9,7 @@ const Home: NextPage = () => {
     <div>
       <Head>
         <title>Roast my idea</title>
-        <meta name="description" content="No bs github issue finder." />
+        <meta name="description" content="Discuss your ideas with the world." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Center>
@@ -46,6 +46,7 @@ const Home: NextPage = () => {
               Sign In with google
             </Button>
           )}
+          {session.status === "loading" && <Loader />}
         </Stack>
       </Center>
     </div>
