@@ -1,5 +1,4 @@
-import { Session } from "next-auth";
-import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from "next";
 import logger from "../utils/winston";
 import { getServerAuthSession } from "./get-server-auth-session";
 
